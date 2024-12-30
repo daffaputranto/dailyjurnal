@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Daily Journal</title>
+    <link rel="icon" href="img/logo.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        /* Default Light Mode Styles */
+        body {
+            background-color: white;
+            color: black;
+        }
+        .bg-danger-subtle {
+            background-color: #f8d7da;
+        }
+        .navbar {
+            background-color: #ffffff;
+        }
+        .navbar-brand,
+        .nav-link {
+            color: black !important;
+        }
+        .card {
+            background-color: #ffffff;
+            color: black;
+        }
+        .card-footer {
+            background-color: #f8f9fa;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+        body.dark-mode .bg-danger-subtle {
+            background-color: #2c2c2c;
+        }
+        body.dark-mode .navbar {
+            background-color: #333333;
+        }
+        body.dark-mode .navbar-brand,
+        body.dark-mode .nav-link {
+            color: white !important;
+        }
+        body.dark-mode .card {
+            background-color: #2a2a2a;
+            color: white;
+        }
+        body.dark-mode .card-footer {
+            background-color: #333333;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar with Dark Mode Toggle Button -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Muhammad Daffa Tri P</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-dark">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#article">Article</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Schedule </a>
+                    </li>    
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.php" target="_blank">Login</a>
+                      </li>
+                </ul>
+                <button id="darkModeToggle" class="btn btn-outline-secondary" onclick="toggleDarkMode()">
+                    <i class="bi bi-moon-stars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="text-center p-5 bg-danger-subtle text-sm-start">
+        <div class="container">
+            <div class="d-sm-flex flex-sm-row-reverse align-items-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Lawang_Sewu_in_Semarang_City.jpg/800px-Lawang_Sewu_in_Semarang_City.jpg" class="img-fluid" width="300" alt="Diary Image">
+                <div class="mt-3">
+                    <h1 class="fw-bold display-4">Berita Harian Semarang</h1>
+                    <h4 class="lead display-6">merangkum berita setiap kejadian Semarang</h4>
+                    <h6>
+                        <span id="tanggal"></span>
+                        <span id="jam"></span>
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+
+    <!-- Article Section -->
+    <section id="article" class="text-center p-5">
+        <div class="container">
+            <h1 class="fw-bold display-4 pb-3">Articles</h1>
+            <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROmxbT2CNk1Mx-QiAcs6743GZnh7wzpsTRxg&s" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Transportasi</h5>
+                            <p class="card-text">Asap BRT Trans Semarang Dikeluhkan Warga</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://img.antaranews.com/cache/1200x800/2023/01/01/IMG_20230101_164807.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Berita Bencana Alam</h5>
+                            <p class="card-text">Banjir Semarang, beberapa titik masih tergenang - Berita Terkini Jawa Tengah</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://img.antaranews.com/cache/1200x800/2024/01/19/IMG_20240119_171116.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Berita kecelakaan</h5>
+                            <p class="card-text">Seorang pemotor jatuh dari atas jembatan layang di Semarang - Berita Terkini Jawa Tengah</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://thumb.viva.id/vivajogja/1265x711/2024/09/27/66f64f96d5b1d-remaja-anggota-gangster-di-semarang-yang-disebut-dengan-istilah-kreak_jogja.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Kriminalitas</h5>
+                            <p class="card-text">Ini Istilah Kreak Sebutan untuk Gangster Semarang, Aksinya Mirip Klithih Jogja</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://beritajateng.id/wp-content/uploads/2024/08/mahasiswa-semarang.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Politik</h5>
+                            <p class="card-text">Ricuh, Ribuan Mahasiswa di Semarang Demo Tolak RUU Pilkada</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Article End -->
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="text-center p-5 bg-danger-subtle">
+        <div class="container">
+            <h1 class="fw-bold display-4 pb-3">Gallery</h1>
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://warakngendog.com/wp-content/uploads/2023/04/kota-semarang.jpeg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://warakngendog.com/wp-content/uploads/2023/04/kota-semarang.jpeg" class="d-block w-100" alt="...">
+                    </div>
+                    <!-- Additional carousel items -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Gallery End -->
+
+<!-- Schedule  Section -->
+<section id="Schedule " class="text-center p-5">
+        <div class="container">
+            <h1 class="fw-bold display-4 pb-3">Schedule </h1>
+            <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+                <div class="col">
+                    <div class="card h-100">
+                        
+                        <div class="card-body">
+                            <h5 class="card-title">SENIN</h5>
+                            <p class="card-text">Merumuskan Agenda</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                       
+                        <div class="card-body">
+                            <h5 class="card-title">SELASA</h5>
+                            <p class="card-text">Mencari narasumber</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                      
+                        <div class="card-body">
+                            <h5 class="card-title">RABU</h5>
+                            <p class="card-text">Peliputan</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        
+                        <div class="card-body">
+                            <h5 class="card-title">KAMIS</h5>
+                            <p class="card-text">Menyusun Berita</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        
+                        <div class="card-body">
+                            <h5 class="card-title">JUMAT</h5>
+                            <p class="card-text">Upload berita ke website</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Schedule  End -->
+
+    <!-- Footer -->
+    <footer class="text-center p-5">
+        <a href=""><i class="bi bi-instagram h2 p-2 text-dark"></i></a>
+        <a href=""><i class="bi bi-twitter h2 p-2 text-dark"></i></a>
+        <a href=""><i class="bi bi-whatsapp h2 p-2 text-dark"></i></a>
+        <div>
+            Muhammad Daffa Tri P &copy; 2024
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // Function to display current time
+        window.setTimeout("tampilWaktu()", 1000);
+
+        function tampilWaktu() {
+            var waktu = new Date();
+            var bulan = waktu.getMonth() + 1;
+
+            setTimeout("tampilWaktu()", 1000);
+            document.getElementById("tanggal").innerHTML = waktu.getDate() + "/" + bulan + "/" + waktu.getFullYear();
+            document.getElementById("jam").innerHTML = waktu.getHours() + ":" + waktu.getMinutes() + ":" + waktu.getSeconds();
+        }
+
+        // Function to toggle between Dark Mode and Light Mode
+        function toggleDarkMode() {
+            var body = document.body;
+            body.classList.toggle('dark-mode');
+
+            // Save user preference in localStorage
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load saved theme preference from localStorage
+        window.onload = function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-mode');
+            }
+        };
+    </script>
